@@ -16,8 +16,11 @@ public class GameManager : MonoBehaviour
             _teams.InitalizateTeams();
         foreach(Team team in _teams.GetTeams())
         {
+            //Подписка на события забитого гола
             team.GetGoal().MakeGoal += GameManager_MakeGoal;
         }
+
+        //Создание мяча
         Instantiate(_ball.gameObject);
     }
 
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
         {
             foreach (Team team in teams)
             {
+                //Поиск команды игрока, забившего мяч
                 if (team.Equals(player.GetTeam()))
                 {
                     team.IncreaseScore();
