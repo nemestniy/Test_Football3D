@@ -28,6 +28,12 @@ public class Player : MonoBehaviour
         return _team;
     }
 
+    public void Respawn(Vector3 position)
+    {
+        _rigidbody.constraints = RigidbodyConstraints.None;
+        transform.position = position;
+    }
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();

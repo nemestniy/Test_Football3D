@@ -14,17 +14,66 @@ public class Teams : MonoBehaviour
 
     public void InitalizateTeams()
     {
-        foreach(Team team in _teams)
+        if (_teams != null)
         {
-            team.InitializateScore();
-            team.GetGoal().InitializateTeam(team);
-            for(int i = 0; i < team.GetPlayersCount(); i++)
+            foreach (Team team in _teams)
             {
-                //Создание игроков
-                var playerObject = Instantiate(_player, team.GetSpawnPosition(), Quaternion.identity) as GameObject;
-                var player = playerObject.GetComponent<Player>();
-                if (player != null)
-                    player.InitializateTeam(team);
+                team.InitializateScore();
+                team.GetGoal().InitializateTeam(team);
+                for (int i = 0; i < team.GetPlayersCount(); i++)
+                {
+                    //Создание игроков
+                    var playerObject = Instantiate(_player, team.GetSpawnPosition(), Quaternion.identity) as GameObject;
+                    var player = playerObject.GetComponent<Player>();
+                    if (player != null)
+                    {
+                        player.InitializateTeam(team);
+                        team.AddPlayer(player);   
+                    }
+                }
+            }
+        }
+    }
+
+    public Team GetWinner()
+    {
+        int maxScore = 0;
+        Team winner = null;
+        int winnerCount = 0;
+        if (_teams != null)
+        {
+            foreach(Team team in _teams)
+            {
+                if(team.GetScore() > maxScore)
+                {
+                    maxScore = team.GetScore();
+                    winner = team;
+                }
+            }
+
+            foreach(Team team in _teams)
+            {
+                if (team.GetScore() == maxScore)
+                    winnerCount++;
+            }
+        }
+
+        if (winnerCount > 1)
+            return null;
+        else
+            return winner;
+    }
+
+    public void RespawnTeams()
+    {
+        if(_teams != null)
+        {
+            foreach(Team team in _teams)
+            {
+                foreach(Player player in team.GetPlayers())
+                {
+                    player.Respawn(team.GetSpawnPosition());
+                }
             }
         }
     }
@@ -60,6 +109,22 @@ public class Team
     private Text _textScore;
 
     private int _score;
+    private List<Player> _players = new List<Player>();
+
+    public void AddPlayer(Player player)
+    {
+        _players.Add(player);
+    }
+
+    public List<Player> GetPlayers()
+    {
+        return _players;
+    }
+
+    public string GetTeamName()
+    {
+        return _teamName;
+    }
 
     public Goal GetGoal()
     {

@@ -25,6 +25,7 @@ public class Goal : MonoBehaviour
     {
         if(other.tag == "Ball")
         {
+            //Проверка на событие забитого гола в свои ворота 
             var ball = other.transform.GetComponent<Ball>();
             if(ball != null)
             {

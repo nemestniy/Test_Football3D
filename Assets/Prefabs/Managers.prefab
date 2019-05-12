@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6723715595455854517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6723715595455854514}
+  - component: {fileID: 6723715595455854513}
+  - component: {fileID: 6723715595455854512}
+  - component: {fileID: 6723715595455854515}
+  - component: {fileID: 6723715595455854478}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6723715595455854514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723715595455854517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6723715595493128313}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6723715595455854513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723715595455854517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b8d49c16b7a604699c79e24f82bd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 2795582480481475247, guid: 5504c0b2c0ecff24fb545761e69cc24e, type: 3}
+  _teams:
+  - _teamName: Blue
+    _teamColor: {r: 0, g: 0.2669897, b: 1, a: 0}
+    _inputManager: {fileID: 6723715595455854512}
+    _teamGoal: {fileID: 0}
+    _playersCount: 1
+    _spawnPosition: {fileID: 0}
+    _textScore: {fileID: 0}
+  - _teamName: Red
+    _teamColor: {r: 1, g: 0, b: 0, a: 0}
+    _inputManager: {fileID: 6723715595455854515}
+    _teamGoal: {fileID: 0}
+    _playersCount: 1
+    _spawnPosition: {fileID: 0}
+    _textScore: {fileID: 0}
+--- !u!114 &6723715595455854512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723715595455854517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292229ba81946bd4989edade6b97f443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6723715595455854515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723715595455854517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b22cc55577ab345b21f2ce8025d567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6723715595455854478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723715595455854517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a02b054898c144d95f895ead7a5514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameTimeInSeconds: 90
+  _timer: 0
+  _ball: {fileID: 5303627709109241675, guid: 373213ded0f94104eac5d092915605eb, type: 3}
+  _ballSpawnPosition: {fileID: 0}
+  _dialogWindowController: {fileID: 0}
+  _cameraController: {fileID: 0}
+  _UITimer: {fileID: 0}
+--- !u!1 &6723715595493128312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6723715595493128313}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6723715595493128313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723715595493128312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6723715595455854514}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
